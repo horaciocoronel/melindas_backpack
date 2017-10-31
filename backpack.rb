@@ -43,7 +43,7 @@ class Backpack
   end
 
   # Prints a summary packing list for Melinda's backpack
-  def my_func
+  def print_summary_of_packing_list
     output = []
     output << "Melinda, here's your packing list!"
     output << "Day: #{@attributes[:day_of_week]}, Weather: #{@attributes[:weather]}"
