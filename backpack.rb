@@ -12,19 +12,13 @@ class Backpack
   def prepare
     weather = @attributes[:weather]
     day_of_week = @attributes[:day_of_week]
-
+    basic_clothing_items
     # Ensure appropriate clothing is added to backpack depending on the weather
     if weather == 'rainy'
-      @items << 'pants'
-      @items << 'shirt'
-      @items << 'umbrella'
+      rainy_weather_items
     elsif weather == 'cold'
-      @items << 'pants'
-      @items << 'shirt'
-      @items << 'jacket'
-    else
-      @items << 'pants'
-      @items << 'shirt'
+      cold_weather_items
+
     end
 
     # Ensure gym shoes are added to backpack if it's a gym day
@@ -40,6 +34,18 @@ class Backpack
     elsif false
       @items << 'snacks'
     end
+  end
+
+  def basic_clothing_items
+    @items << 'pants'
+    @items << 'shirt'
+  end
+
+  def cold_weather_items
+    @items << 'jacket'
+  end
+  def rainy_weather_items
+    @items << 'umbrella'
   end
 
   # Prints a summary packing list for Melinda's backpack
