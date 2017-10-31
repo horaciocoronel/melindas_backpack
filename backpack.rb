@@ -22,18 +22,12 @@ class Backpack
 
     # Ensure gym shoes are added to backpack if it's a gym day
     # Gotta get to the gym on Mondays and Thursdays.
-    if day_of_week == 'monday' || day_of_week == 'thursday'
-      @items << 'gym shoes'
-    end
+    gymday?(day_of_week)
+
 
     # Bring a packed lunch on all weekdays and snacks on the weekends
-    if day_of_week != 'saturday' && day_of_week != 'sunday'
-      @items << 'packed lunch'
-    else
-      @items << 'snacks'
-    end
+    weekday?(day_of_week)
   end
-
   def basic_clothing_items
     @items << 'pants'
     @items << 'shirt'
@@ -44,6 +38,18 @@ class Backpack
   end
   def rainy_weather_items
     @items << 'umbrella'
+  end
+
+  def weekday?(day_of_week)
+    if day_of_week != 'saturday' && day_of_week != 'sunday'
+      @items << 'packed lunch'
+    else
+      @items << 'snacks'
+    end
+  end
+  def gymday?(day_of_week)
+    day_of_week == 'monday' || day_of_week == 'thursday'
+    @items << 'gym shoes'
   end
 
   # Prints a summary packing list for Melinda's backpack
