@@ -18,20 +18,18 @@ class Backpack
       rainy_weather_items
     elsif weather == 'cold'
       cold_weather_items
-
     end
 
     # Ensure gym shoes are added to backpack if it's a gym day
     # Gotta get to the gym on Mondays and Thursdays.
     if day_of_week == 'monday' || day_of_week == 'thursday'
-      #add gym shoes to items
       @items << 'gym shoes'
     end
 
     # Bring a packed lunch on all weekdays and snacks on the weekends
     if day_of_week != 'saturday' && day_of_week != 'sunday'
       @items << 'packed lunch'
-    elsif false
+    else
       @items << 'snacks'
     end
   end
